@@ -1,0 +1,86 @@
+﻿<Window x:Class="Master_project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Master_project"
+        mc:Ignorable="d"
+        Title="Cykle Hamiltona, algorytm kolorowania grafów." Height="768" Width="1024" >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Grafika.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Name="Grid" Background="Cornsilk">
+            <Canvas  x:Name="myGrid"  Height="449" Width="582" VerticalAlignment="Center" MouseDown="myGrid_MouseRightButtonDown"  MouseUp="myGrid_MouseUp" MouseMove="myGrid_MouseMove" Background="Azure" Margin="224,137,196,143">
+                <Button Style="{StaticResource GlassButton}" Canvas.Left="-94" Canvas.Top="80" Content="Losowy" Height="33" Name="button2" Width="80" Click="button2_Click" />
+
+            <Button Style="{StaticResource GlassButton}" Canvas.Left="-94" Canvas.Top="30" Content="Nowy" Height="36" Name="button4" Width="80" Click="button4_Click" />
+             
+
+           
+
+
+          
+
+
+                <Button Style="{StaticResource GlassButton}" Canvas.Left="-94" Canvas.Top="170" Content="Pełny" Height="35" Name="button6" Width="80" Click="button6_Click" />
+                <Button Style="{StaticResource GlassButton}" Canvas.Left="-200" Canvas.Top="185" Content="Koloruj1" Height="35" Name="button12" Width="80" Click="button12_Click" />
+                <Button Style="{StaticResource GlassButton}" Canvas.Left="-200" Canvas.Top="269" Content="Krawędzie" Height="35" Name="button15" Width="80" Click="button15_Click" />
+                <Button Style="{StaticResource GlassButton}" Canvas.Left="-200" Canvas.Top="230" Content="Cofnij" Height="35" Name="button14" Width="80" Click="button14_Click" />
+                <Button Style="{StaticResource GlassButton}" Content="Help" Height="36" Name="button1" Width="80"  Canvas.Left="-94" Canvas.Top="269" Click="button1_Click_1" />
+                <Button Style="{StaticResource GlassButton}" Canvas.Left="-94" Canvas.Top="219" Content="Inf" Height="36" Name="button7" Width="80" Click="button7_Click" />
+
+                <Button Style="{StaticResource GlassButton}" Canvas.Left="-200" Canvas.Top="400" Content="Multi" Height="36" Name="button16" Width="80" Click="button16_Click" />
+
+
+
+                <Button Style="{StaticResource GlassButton}" Canvas.Left="-202" Canvas.Top="30" Content="XML" Height="36" Name="button8" Width="80"  Click="button8_Click" />
+                <Menu  Canvas.Left="-200" Canvas.Top="-50" Background="LightGray" Height="50" Width="100"  >
+                    <MenuItem  Header="Graf"  Height="50" Width="100" >
+                        <MenuItem.Background>
+                            <RadialGradientBrush GradientOrigin="0.75,0.25">
+                                <GradientStop Offset="1" Color="Turquoise"/>
+                                <GradientStop Offset="0.4" Color="AliceBlue"/>
+                                <GradientStop Color="LightSkyBlue" Offset="0.0"/>
+                            </RadialGradientBrush>
+                        </MenuItem.Background>
+                        <MenuItem Name="menuitem" Header="Zapisz graf" Click="Zapisz_graf" />
+                        <MenuItem Header="Odczytaj graf" Click="Odczytaj_graf" />
+                    </MenuItem>
+                </Menu>
+                <Button Style="{StaticResource GlassButton}" Canvas.Left="-202" Canvas.Top="80" Content="Usuń" Height="33" Name="button10" Width="80" Click="button10_Click" />
+                <Label Content="Kliknij,żeby dodać wierzchołek." Grid.Row="1" Height="25" HorizontalAlignment="Left" Name="statusLabel" VerticalAlignment="Bottom" Canvas.Left="0" Canvas.Top="426" />
+                <StackPanel Height="36" HorizontalAlignment="Left" Visibility="Collapsed" Margin="-18,320,0,0" Name="panel" VerticalAlignment="Top" Width="80" Canvas.Left="-184" Canvas.Top="-192">
+                    <Button Style="{StaticResource GlassButton}" Canvas.Left="-202" Canvas.Top="130" Content="Koloruj" Height="37" Name="button11" Width="80" Click="button11_Click" >
+                        <Button.ToolTip>
+                            <StackPanel Background="Honeydew" Height="100" Width="170">
+                                <StackPanel Width="200" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                    <TextBlock TextWrapping="Wrap" Foreground="#FFF9F4F4" TextAlignment="Center" Background="{x:Null}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="181" Height="98">
+              <Run FontFamily="Verdana" FontSize="11" FontWeight="Normal" Foreground="#FF151514"
+              Text="Klikaj przycisk Koloruj."/>
+                                    </TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+                <ScrollViewer Margin="600,50,0,0" Width="150" Height="350" Grid.Row="0" Grid.Column="0"  HorizontalScrollBarVisibility="Auto"  IsDeferredScrollingEnabled="true" >
+
+                    <Label Margin="0,0,0,0" Height="2000" Name="tekst" Width="150" Canvas.Left="789" Background="AntiqueWhite"></Label>
+                </ScrollViewer>
+                <TextBox Canvas.Left="-175" Canvas.Top="361" Height="31" Name="textBox6" Width="35" Text="3" TextChanged="multi" />
+            </Canvas>
+            <Canvas Width="150" Height="90" Name="menu10" MouseDown="myGrid_MouseRightButtonDown" Margin="456,320,456,384">
+                <Menu MouseDown="myGrid_MouseRightButtonDown" Name="menu11" Visibility='Collapsed'>
+                    <MenuItem Header="Usuń" MouseDown="myGrid_MouseRightButtonDown" Width="120" Height="30" Click="Usun_w">
+                    </MenuItem>
+                </Menu>
+
+            </Canvas>
+
+        </Grid>
+    
+</Window>
